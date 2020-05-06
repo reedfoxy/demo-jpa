@@ -1,0 +1,23 @@
+server:
+  port: 8080 # server port
+logging:
+  level:
+    org.hibernate.SQL : DEBUG # sql logging
+    org.hibernate.type.descriptor.sql: trace # DDL 시 입력된 실제 Value 값을 확인
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb # 실제 주소는 jdbc:h2:tcp://localhost:9092/mem:testdb
+    username: sa # database username
+    password: # database password
+    driver-class-name: org.h2.Driver # database driver
+  jpa:
+    generate-ddl: true # 시작시 DDL 자동 생성 여부
+    database: h2 # 사용할 Database 명시적 선언
+    show-sql: false # sql logging 을 system out 으로 보낼지 여부. 보안 문제로 false 처리 하고 logging 에서 처리
+    hibernate:
+      ddl-auto: create # 시작시 테이블 초기화 전략
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl # database tableName, column camelcase 엄격 하게 적용
+    properties:
+      hibernate:
+        format_sql: true # sql query pretty option
