@@ -3,7 +3,7 @@ server:
 logging:
   level:
     org.hibernate.SQL : DEBUG # sql logging
-    org.hibernate.type.descriptor.sql: trace # DDL 시 입력된 실제 Value 값을 확인
+#    org.hibernate.type.descriptor.sql: trace # DDL 시 입력된 실제 Value 값을 확인
 spring:
   datasource:
     url: jdbc:h2:mem:testdb # 실제 주소는 jdbc:h2:tcp://localhost:9092/mem:testdb
