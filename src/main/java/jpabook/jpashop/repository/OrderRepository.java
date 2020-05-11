@@ -26,6 +26,10 @@ public class OrderRepository {
     // 검색 조회
     public List<Order> findAll(OrderSearch orderSearch) {
 
+        if(orderSearch.getMemberName() == null) {
+            return em.createQuery("select o from  Order o join o.member m", Order.class).setMaxResults(1000).getResultList();
+        }
+
         return em.createQuery("select o from  Order o join o.member m where o.status = :status and m.name like :name", Order.class)
                 .setParameter("status", orderSearch.getOrderStatus())
                 .setParameter("name", orderSearch.getMemberName())
