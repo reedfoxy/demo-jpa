@@ -15,7 +15,7 @@ spring:
     database: h2 # 사용할 Database 명시적 선언
     show-sql: false # sql logging 을 system out 으로 보낼지 여부. 보안 문제로 false 처리 하고 logging 에서 처리
     hibernate:
-      ddl-auto: none # 시작시 테이블 초기화 전략
+      ddl-auto: create # 시작시 테이블 초기화 전략
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl # database tableName, column camelcase 엄격 하게 적용
     properties:
