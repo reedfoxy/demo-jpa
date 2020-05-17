@@ -21,3 +21,4 @@ spring:
     properties:
       hibernate:
         format_sql: true # sql query pretty option
+        default_batch_fetch_size : 100 # in query 의 개수를 몇개로 할 것이냐
